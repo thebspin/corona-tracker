@@ -27,7 +27,8 @@
           v-if="countries.length > 0"
           striped
           hover
-          :items="countriesComputed"
+          :items="countries"
+          :fields="tableFields"
           :per-page="perPage"
           :current-page="currentPage"
           :filter="countryNameFilter"
@@ -41,7 +42,7 @@
           v-if="countries.length > 0"
           v-model="currentPage"
           size="md"
-          :total-rows="countriesComputed.length"
+          :total-rows="countries.length"
           :per-page="perPage"
           limit="7"
           first-number
@@ -67,24 +68,25 @@ export default {
       currentPage: 1,
       perPage: 10,
       countryNameFilter: null,
-      sortByFilter: "cases"
+      sortByFilter: "cases",
+      tableFields: [
+        { key: "country", label: "Country" },
+        { key: "cases", label: "Cases" },
+        { key: "casesPerOneMillion", label: "Cases per 1m" },
+        { key: "todayCases", label: "Cases today" },
+        { key: "deaths", label: "Deaths" },
+        { key: "todayDeaths", label: "Deaths today" },
+        { key: "recovered", label: "Recovered" },
+        { key: "active", label: "Active" },
+        { key: "critical", label: "Critical" }
+      ]
     }
   },
   computed: {
-    countriesComputed() {
-      if (this.countries) {
-        this.countries.forEach(function(x) {
-          delete x.countryInfo
-          x.test = x.casesPerOneMillion
-          delete x.casesPerOneMillion
-        })
-        return this.countries
-      }
-      return []
-    },
     sortByoptions() {
       const options = [
         { value: "cases", text: "Cases" },
+        { value: "casesPerOneMillion", text: "Cases per 1m" },
         { value: "todayCases", text: "Today cases" },
         { value: "deaths", text: "Deaths" },
         { value: "todayDeaths", text: "Today deaths" },
