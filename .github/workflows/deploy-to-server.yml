@@ -27,7 +27,7 @@ jobs:
       - name: List output files
         run: ls
 
-        - name: CD to dist folder
+      - name: CD to dist folder
         run: |
           cd dist
 
