@@ -33,5 +33,5 @@ jobs:
           ftp-server: ${{ secrets.FTP_SERVER }}/test
           ftp-username: ${{ secrets.FTP_USERNAME }}
           ftp-password: ${{ secrets.FTP_PASSWORD }}
-          LOCAL_DIR: dist
-          ARGS: --delete
+          local-dir: dist
+          git-ftp-args: --delete
