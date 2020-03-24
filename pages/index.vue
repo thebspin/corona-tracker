@@ -17,7 +17,7 @@
       </b-col>
     </b-row>
     <main-table :countries="countries" class="mt-4" />
-    <p>Data last updated: {{ updatedCases }}</p>
+    <p>Data last updated: {{ updatedCases }} - Made by me</p>
   </b-container>
 </template>
 
