@@ -36,8 +36,15 @@
           :sort-desc="true"
           outlined
           selectable
+          :busy="!countries.length > 0"
           @row-clicked="rowClicked"
-        />
+          ><template v-slot:table-busy>
+            <div class="text-center text-info my-2">
+              <b-spinner class="align-middle"></b-spinner>
+              <strong>Loading...</strong>
+            </div>
+          </template></b-table
+        >
         <b-pagination
           v-if="countries.length > 0"
           v-model="currentPage"
