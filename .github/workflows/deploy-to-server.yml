@@ -21,7 +21,7 @@ jobs:
           npm run build
 
       - name: Git reset
-          run: /
+          run: |
             git reset --hard
 
       - name: List output files
