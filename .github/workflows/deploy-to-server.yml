@@ -30,7 +30,7 @@ jobs:
       - name: FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@3.0.0
         with:
-          ftp-server: ${{ secrets.FTP_SERVER }}/test
+          ftp-server: ${{ secrets.FTP_SERVER }}/tracker.keirs.nl
           ftp-username: ${{ secrets.FTP_USERNAME }}
           ftp-password: ${{ secrets.FTP_PASSWORD }}
           local-dir: dist/
