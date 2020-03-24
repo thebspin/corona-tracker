@@ -99,7 +99,7 @@ export default {
   },
   methods: {
     rowClicked(item) {
-      console.log(item)
+      this.$router.push("country/" + item.country.toLowerCase())
     }
   }
 }

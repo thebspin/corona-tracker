@@ -28,8 +28,10 @@ export default {
     MainTable
   },
   async asyncData({ $axios }) {
-    const allCases = await $axios.$get("https://corona.lmao.ninja/all")
-    const countries = await $axios.$get("https://corona.lmao.ninja/countries")
+    const allCases = await $axios.$get("https://tracker-api.keirs.nl/all")
+    const countries = await $axios.$get(
+      "https://tracker-api.keirs.nl/countries"
+    )
     return { allCases, countries }
   },
   computed: {
