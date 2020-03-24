@@ -27,10 +27,13 @@ jobs:
       - name: List output files
         run: ls
 
+        - name: CD to dist folder
+        run: |
+          cd dist
+
       - name: FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@3.0.0
         with:
-          ftp-server: ${{ secrets.FTP_SERVER }}
+          ftp-server: ${{ secrets.FTP_SERVER }}/test
           ftp-username: ${{ secrets.FTP_USERNAME }}
           ftp-password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: dist/
