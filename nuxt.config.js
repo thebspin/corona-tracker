@@ -5,7 +5,7 @@ export default {
    */
   head: {
     title:
-      "Covid-19 tracker | The last numbers about Corona worldwide" ||
+      "Covid-19 tracker | The lastest numbers about the Corona virus worldwide" ||
       process.env.npm_package_name,
     meta: [
       { charset: "utf-8" },
@@ -14,7 +14,7 @@ export default {
         hid: "description",
         name: "description",
         content:
-          "Tracking and see the latest numbers about Corona worldwide or per country" ||
+          "Tracking and insight to the latest numbers about the Corona virus worldwide or per country" ||
           process.env.npm_package_description
       }
     ],
