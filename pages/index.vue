@@ -10,13 +10,22 @@
         <h3>Cases: {{ numberWithComma(allCases.cases) }}</h3>
       </b-col>
       <b-col>
-        <h3>Deaths: {{ numberWithComma(allCases.deaths) }}</h3>
+        <h3 class="text-center">
+          Deaths: {{ numberWithComma(allCases.deaths) }}
+        </h3>
       </b-col>
       <b-col>
-        <h3>Recovered: {{ numberWithComma(allCases.recovered) }}</h3>
+        <h3 class="text-right">
+          Recovered: {{ numberWithComma(allCases.recovered) }}
+        </h3>
       </b-col>
     </b-row>
-    <main-table :countries="countries" class="mt-4" />
+    <main-table
+      v-if="countries.length > 0"
+      :countries="countries"
+      class="mt-4"
+    />
+    <p v-else>The database is currently unreachable</p>
     <p>Data last updated: {{ updatedCases }}</p>
   </b-container>
 </template>
