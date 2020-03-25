@@ -5,8 +5,8 @@ export default {
    */
   head: {
     title:
-      process.env.npm_package_name ||
-      "Covid-19 tracker | Almost realtime numbers about Corona",
+      "Covid-19 tracker | The last numbers about Corona worldwide" ||
+      process.env.npm_package_name,
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -14,8 +14,8 @@ export default {
         hid: "description",
         name: "description",
         content:
-          process.env.npm_package_description ||
-          "Tracking the latest corona stats worldwide almost realtime"
+          "Tracking and see the latest numbers about Corona worldwide or per country" ||
+          process.env.npm_package_description
       }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
@@ -31,7 +31,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ["@/plugins/filters"],
   /*
    ** Nuxt.js dev-modules
    */
@@ -55,7 +55,8 @@ export default {
     "@nuxtjs/axios",
     "@nuxtjs/pwa",
     // Doc: https://github.com/nuxt-community/dotenv-module
-    "@nuxtjs/dotenv"
+    "@nuxtjs/dotenv",
+    "@nuxt/http"
     // "nuxt-purgecss"
   ],
   /*

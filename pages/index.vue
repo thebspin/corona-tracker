@@ -7,16 +7,16 @@
     </b-row>
     <b-row class="mt-4">
       <b-col>
-        <h3>Cases: {{ numberWithComma(allCases.cases) }}</h3>
+        <h3>Cases: {{ allCases.cases | numberWithComma }}</h3>
       </b-col>
       <b-col>
         <h3 class="text-center">
-          Deaths: {{ numberWithComma(allCases.deaths) }}
+          Deaths: {{ allCases.deaths | numberWithComma }}
         </h3>
       </b-col>
       <b-col>
         <h3 class="text-right">
-          Recovered: {{ numberWithComma(allCases.recovered) }}
+          Recovered: {{ allCases.recovered | numberWithComma }}
         </h3>
       </b-col>
     </b-row>
