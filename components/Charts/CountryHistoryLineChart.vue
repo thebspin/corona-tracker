@@ -13,21 +13,21 @@ import LineChart from "@/charts/LineChart"
 
 export default {
   components: {
-    LineChart
+    LineChart,
   },
   props: {
     country: {
       type: Object,
       default() {
         return {}
-      }
+      },
     },
     historical: {
       type: Object,
       default() {
         return {}
-      }
-    }
+      },
+    },
   },
   data() {
     return {
@@ -40,7 +40,7 @@ export default {
               return { x: key, y: this.historical.timeline.cases[key] }
             }),
             fill: false,
-            borderColor: "rgb(100, 0, 200)"
+            borderColor: "rgb(100, 0, 200)",
           },
           {
             label: "Deaths",
@@ -48,8 +48,8 @@ export default {
               return { x: key, y: this.historical.timeline.deaths[key] }
             }),
             fill: false,
-            borderColor: "rgb(255, 99, 132)"
-          }
+            borderColor: "rgb(255, 99, 132)",
+          },
           // {
           //   label: "Recovered",
           //   data: keys(this.historical.timeline.recovered).map((key) => {
@@ -58,13 +58,13 @@ export default {
           //   fill: false,
           //   borderColor: "rgb(54, 162, 235)"
           // }
-        ]
+        ],
       },
       chartOptions: {
         responsive: true,
         title: {
           display: true,
-          text: "Covid-19 State for " + this.country.country
+          text: "Covid-19 State for " + this.country.country,
         },
         scales: {
           xAxes: [
@@ -72,28 +72,28 @@ export default {
               type: "time",
               time: {
                 parser: "M/D/YY",
-                tooltipFormat: "ll"
+                tooltipFormat: "ll",
               },
               scaleLabel: {
                 display: true,
-                labelString: "Date"
-              }
-            }
+                labelString: "Date",
+              },
+            },
           ],
           yAxes: [
             {
               scaleLabel: {
                 display: true,
-                labelString: "Total Cases / Recovered / Deaths Reported"
-              }
-            }
-          ]
-        }
-      }
+                labelString: "Total Cases / Recovered / Deaths Reported",
+              },
+            },
+          ],
+        },
+      },
     }
   },
   mounted() {
     this.loaded = true
-  }
+  },
 }
 </script>

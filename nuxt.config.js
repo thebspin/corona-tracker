@@ -15,10 +15,10 @@ export default {
         name: "description",
         content:
           "Tracking and insight to the latest numbers about the Corona virus worldwide or per country" ||
-          process.env.npm_package_description
-      }
+          process.env.npm_package_description,
+      },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
   /*
    ** Customize the progress-bar color
@@ -41,9 +41,9 @@ export default {
     [
       "@nuxtjs/google-analytics",
       {
-        id: "UA-161806082-1"
-      }
-    ]
+        id: "UA-161806082-1",
+      },
+    ],
   ],
   /*
    ** Nuxt.js modules
@@ -56,7 +56,7 @@ export default {
     "@nuxtjs/pwa",
     // Doc: https://github.com/nuxt-community/dotenv-module
     "@nuxtjs/dotenv",
-    "@nuxt/http"
+    "@nuxt/http",
     // "nuxt-purgecss"
   ],
   /*
@@ -79,12 +79,12 @@ export default {
             name: "styles",
             test: /\.(css|vue)$/,
             chunks: "all",
-            enforce: true
-          }
-        }
-      }
+            enforce: true,
+          },
+        },
+      },
     },
     optimizeCSS: true,
-    extend(config, ctx) {}
-  }
+    extend(config, ctx) {},
+  },
 }

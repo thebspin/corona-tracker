@@ -54,7 +54,7 @@ import CountryHistoryLineChart from "@/components/Charts/CountryHistoryLineChart
 export default {
   components: {
     CountryTotalPieChart,
-    CountryHistoryLineChart
+    CountryHistoryLineChart,
   },
   async asyncData({ $axios, params }) {
     const country = await $axios.$get(
@@ -64,7 +64,7 @@ export default {
       "https://tracker-api.keirs.nl/historical/" + params.name
     )
     return { country, historical }
-  }
+  },
 }
 </script>
 

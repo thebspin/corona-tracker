@@ -67,8 +67,8 @@ export default {
       type: Array,
       default() {
         return []
-      }
-    }
+      },
+    },
   },
   data() {
     return {
@@ -85,8 +85,8 @@ export default {
         { key: "todayDeaths", label: "Deaths today" },
         { key: "recovered", label: "Recovered" },
         { key: "active", label: "Active" },
-        { key: "critical", label: "Critical" }
-      ]
+        { key: "critical", label: "Critical" },
+      ],
     }
   },
   computed: {
@@ -99,15 +99,15 @@ export default {
         { value: "todayDeaths", text: "Today deaths" },
         { value: "recovered", text: "Recovered" },
         { value: "active", text: "Active" },
-        { value: "critical", text: "Critical" }
+        { value: "critical", text: "Critical" },
       ]
       return options
-    }
+    },
   },
   methods: {
     rowClicked(item) {
       this.$router.push("country/" + item.country.toLowerCase())
-    }
-  }
+    },
+  },
 }
 </script>

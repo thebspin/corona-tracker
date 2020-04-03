@@ -34,7 +34,7 @@
 import MainTable from "@/components/MainTable.vue"
 export default {
   components: {
-    MainTable
+    MainTable,
   },
   async asyncData({ $axios }) {
     const allCases = await $axios.$get("https://tracker-api.keirs.nl/all")
@@ -47,12 +47,12 @@ export default {
     updatedCases() {
       const date = new Date(this.allCases.updated)
       return date.toTimeString()
-    }
+    },
   },
   methods: {
     numberWithComma(num) {
       return num.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")
-    }
-  }
+    },
+  },
 }
 </script>

@@ -12,15 +12,15 @@ import PieChart from "@/charts/PieChart"
 
 export default {
   components: {
-    PieChart
+    PieChart,
   },
   props: {
     country: {
       type: Object,
       default() {
         return {}
-      }
-    }
+      },
+    },
   },
   data() {
     return {
@@ -33,21 +33,21 @@ export default {
             backgroundColor: [
               "rgb(255, 99, 132)",
               "rgb(54, 162, 235)",
-              "rgb(255, 205, 86)"
-            ]
-          }
-        ]
+              "rgb(255, 205, 86)",
+            ],
+          },
+        ],
       },
-      chartOptions: {}
+      chartOptions: {},
     }
   },
   mounted() {
     this.chartData.datasets[0].data = [
       this.country.deaths,
       this.country.recovered,
-      this.country.active
+      this.country.active,
     ]
     this.loaded = true
-  }
+  },
 }
 </script>
